@@ -1,5 +1,10 @@
-input {
+[name="url"] {
 	margin:1em;
+	width:50em;
+	max-width:70%;
+	border:1px solid gray;
+	border-radius:4px;
+	padding:0.2em;
 }
 .error {
 	background-color:red;
