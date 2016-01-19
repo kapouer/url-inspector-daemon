@@ -1,6 +1,6 @@
 {
   "name": "url-inspector-daemon",
-  "version": "1.2.3",
+  "version": "1.0.0",
   "description": "url-inspector sample daemon",
   "bin": "bin/url-inspector-daemon",
   "scripts": {
@@ -14,7 +14,7 @@
     "express": "^4.13.3",
     "request": "^2.67.0",
     "sharp": "^0.12.2",
-    "url-inspector": "^1.2.0",
+    "url-inspector": "^1.2.3",
     "whatwg-fetch": "^0.11.0"
   }
 }
