@@ -63,5 +63,11 @@ document.addEventListener('click', function(e) {
 document.addEventListener('click', function(e) {
 	var target = e.target;
 	if (!target.matches('.displayClose')) return;
-	document.getElementById('displayHTML').setAttribute('hidden', 'hidden');
+	var display = document.getElementById('displayHTML');
+	var iframe = display.querySelector('iframe');
+	var doc = iframe.contentWindow.document;
+	display.setAttribute('hidden', 'hidden');
+	doc.open();
+	doc.write("");
+	doc.close();
 });
