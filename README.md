@@ -17,7 +17,5 @@ Usage
 
 * npm install url-inspector-daemon
 * npm start url-inspector-daemon
-* run the daemon
-* open the root url
-* paste url in the input
+* open browser at the printed url
 
