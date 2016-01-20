@@ -15,6 +15,7 @@
 
 .item {
 	display:inline-block;
+	vertical-align:top;
 	font-family:sans;
 	font-size:0.8em;
 	margin:1em;
