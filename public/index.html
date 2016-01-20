@@ -12,8 +12,12 @@
 		<input type="text" name="url" placeholder="paste a URL here" />
 		<button type="submit">inspect</button>
 	</form>
+	<div id="displayHTML" hidden>
+		This iframe shows the resource itself as defined by its type <button class="displayClose">Close it</button>
+		<iframe src="about:blank"></iframe>
+	</div>
 	<div class="items">
-		<a bind-class class="item [data.type]" repeat="data" bind-href="data.url">
+		<a bind-class class="item [data.type]" repeat="data" bind-href="data.url" bind-data-html="data.html">
 			<div class="header">
 				<img bind-src="[data.icon]" class="icon" />
 				<span bind-text>[data.title]</span>
@@ -23,7 +27,7 @@
 			<span class="audio" bind-text>[data.album|remove]</span>
 			<div class="footer">
 				<div class="dimension" bind-text>[data.#key|dimension]</div>
-				<div class="extension" bind-text>[data.ext]</div>
+				<div class="type" bind-text>[data.ext] [data.type]</div>
 			</div>
 		</a>
 	</div>

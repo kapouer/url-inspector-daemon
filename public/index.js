@@ -26,7 +26,7 @@ document.addEventListener('submit', function(e) {
 				if (!dim && data.width && data.height) dim = data.width + "x" + data.height;
 				var size = parseInt(data.size / 1024);
 				if (!isNaN(size)) {
-					dim += ", " + size + 'KB';
+					dim = (dim ? dim + ", " : "") + size + 'KB';
 				}
 				return dim || "";
 			}
@@ -43,3 +43,25 @@ document.addEventListener('DOMContentLoaded', function() {
 	Domt('.items').empty();
 });
 
+document.addEventListener('click', function(e) {
+	var target = e.target.closest('.item');
+	if (!target) return;
+	e.preventDefault();
+	var display = document.getElementById('displayHTML');
+	var iframe = display.querySelector('iframe');
+	var doc = iframe.contentWindow.document;
+	doc.open();
+	doc.write(
+		'<!DOCTYPE html><html><head><link rel="stylesheet" href="iframe.css" /></head><body>'
+		+	target.dataset.html
+		+ '</body></html>'
+	);
+	doc.close();
+	display.removeAttribute('hidden');
+});
+
+document.addEventListener('click', function(e) {
+	var target = e.target;
+	if (!target.matches('.displayClose')) return;
+	document.getElementById('displayHTML').setAttribute('hidden', 'hidden');
+});

@@ -1,3 +1,6 @@
+[hidden] {
+	display:none;
+}
 [name="url"] {
 	margin:1em;
 	width:50em;
@@ -7,27 +10,29 @@
 	padding:0.2em;
 }
 .error {
-	background-color:red;
+	border-color:crimson;
 }
 
 .item {
 	display:inline-block;
+	font-family:sans;
+	font-size:0.8em;
 	margin:1em;
 	position:relative;
 	width:320px;
+	text-decoration:none;
+	border:1px solid gray;
 }
 .item .header {
 	height:1.4em;
 	width:100%;
-	background-color:rgba(0, 0, 0, 0.7);
-	color:white;
+	border-bottom:1px solid gray;
+	color:black;
 	overflow:hidden;
 }
 .item .header .icon {
 	height:100%;
 	vertical-align:top;
-	background-color:white;
-	border-right:1px solid black;
 }
 .item .thumbnail {
 	max-width:100%;
@@ -42,7 +47,7 @@
 .item .footer .dimension {
 	float:left;
 }
-.item .footer .extension {
+.item .footer .type {
 	float:right;
 }
 
@@ -53,3 +58,10 @@
 	display:none;
 }
 
+#displayHTML iframe {
+	display:block;
+	width:640px;
+	height:480px;
+	border:0px;
+	border-radius:4px;
+}
