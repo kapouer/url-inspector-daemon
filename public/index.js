@@ -24,7 +24,7 @@ document.addEventListener('submit', function(e) {
 				var data = context.scope.data;
 				var dim = data.duration;
 				if (!dim && data.width && data.height) dim = data.width + "x" + data.height;
-				var size = Math.ceil(data.size / 1024));
+				var size = Math.ceil(data.size / 1024);
 				if (!isNaN(size)) {
 					dim = (dim ? dim + ", " : "") + size + 'KB';
 				}
