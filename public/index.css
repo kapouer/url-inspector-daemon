@@ -38,6 +38,8 @@
 .item .thumbnail {
 	max-width:100%;
 	display:block;
+	margin-left:auto;
+	margin-right:auto;
 }
 .item .footer {
 	width:100%;
