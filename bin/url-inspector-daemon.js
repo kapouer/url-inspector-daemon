@@ -3,10 +3,11 @@
 var express = require('express');
 var app = express();
 var inspector = require('url-inspector');
-
-app.get('/images', require('../lib/sharpie')({
+var sharpie = require('sharpie')({
 	rs: "w:320,h:240,max"
-}));
+});
+
+app.get('/images', sharpie);
 
 app.get('/inspector', function(req, res, next) {
 	inspector(req.query.url, function(err, data) {

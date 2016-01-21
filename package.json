@@ -11,13 +11,8 @@
   "dependencies": {
     "domt": "^5.2.3",
     "express": "^4.13.3",
-    "media-typer": "^0.3.0",
-    "request": "^2.67.0",
-    "sharp": "^0.12.2",
+    "sharpie": "^0.0.1",
     "url-inspector": "^1.2.6",
     "whatwg-fetch": "^0.11.0"
-  },
-  "optionalDependencies": {
-    "librsvg": "^0.6.1"
   }
 }
