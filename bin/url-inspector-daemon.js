@@ -5,7 +5,7 @@ var app = express();
 var inspector = require('url-inspector');
 
 app.get('/images', require('../lib/sharpie')({
-	rs: "w:320,h:240"
+	rs: "w:320,h:240,max"
 }));
 
 app.get('/inspector', function(req, res, next) {
