@@ -11,7 +11,7 @@
   "dependencies": {
     "domt": "^5.2.3",
     "express": "^4.13.3",
-    "sharpie": "^1.0.0",
+    "sharpie": "^1.1.0",
     "url-inspector": "^1.2.6",
     "whatwg-fetch": "^0.11.0"
   }
