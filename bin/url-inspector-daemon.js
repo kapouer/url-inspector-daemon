@@ -5,7 +5,6 @@ var app = express();
 var inspector = require('url-inspector');
 var sharpie = require('sharpie')({
 	rs: "w:320,h:240,max",
-	format: 'jpeg',
 	bg: 'white',
 	crop: 'center',
 	flatten: true
