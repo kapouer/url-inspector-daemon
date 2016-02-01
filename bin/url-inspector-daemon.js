@@ -16,7 +16,9 @@ app.get('/inspector', function(req, res, next) {
 	inspector(req.query.url, function(err, data) {
 		if (err) return next(err);
 		if (data.thumbnail) {
-			data.thumbnail = '/images?url=' + encodeURIComponent(data.thumbnail);
+			if (data.thumbnail.startsWith('data:') == false) {
+				data.thumbnail = '/images?url=' + encodeURIComponent(data.thumbnail);
+			}
 		} else if (data.type == "image") {
 			data.thumbnail = '/images?url=' + encodeURIComponent(data.url);
 		}
