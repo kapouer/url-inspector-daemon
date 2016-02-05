@@ -4,7 +4,8 @@
   "description": "url-inspector sample daemon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "bin/url-inspector-daemon.js"
+    "start": "bin/url-inspector-daemon.js",
+    "install": "mkdir -p cache"
   },
   "author": "Jérémy Lal <kapouer@melix.org>",
   "license": "MIT",
