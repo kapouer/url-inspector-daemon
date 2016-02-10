@@ -51,7 +51,10 @@ app.get('/domt.js', (req, res) => res.sendFile(require.resolve('domt')));
 app.get('/fetch.js', (req, res) => res.sendFile(require.resolve('whatwg-fetch')));
 app.get('*', express.static(__dirname + '/../public'));
 
-var server = app.listen(3001, function() {
+var port = parseInt(process.env.PORT);
+if (isNaN(port)) port = undefined;
+
+var server = app.listen(port, function() {
 	console.log(`Please open
 http://localhost:${server.address().port}/
 `);
