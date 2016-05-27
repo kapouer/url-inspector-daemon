@@ -7,6 +7,8 @@ var inspector = require('url-inspector');
 var fs = require('fs');
 var mime = require('mime');
 var dataUri = require('strong-data-uri');
+var RateLimit = require('express-rate-limit');
+
 var sharpie = require('sharpie')({
 	rs: "w:320,h:240,max",
 	bg: 'white',
@@ -14,17 +16,25 @@ var sharpie = require('sharpie')({
 	flatten: true
 });
 
+app.enable('trust proxy');
+
 function hash(buf) {
 	return crypto.createHash('sha1').update(buf).digest("base64").replace(/[+=?]/g, '');
 }
 
 var rootDir = __dirname + '/..';
 
+var limiter = new RateLimit({
+	windowMs: 10*1000, // 10 seconds
+	max: 10, // limit each IP to 10 requests per windowMs
+	delayMs: 0 // disable delaying - full speed until the max limit is reached
+});
+
 app.use('/cache', express.static(rootDir + '/cache'));
 
 app.get('/images', sharpie);
 
-app.get('/inspector', function(req, res, next) {
+app.get('/inspector', limiter, function(req, res, next) {
 	inspector(req.query.url, function(err, data) {
 		if (err) return next(err);
 		var thumb = data.thumbnail;
