@@ -52,7 +52,7 @@ app.get('/inspector', limiter, function(req, res, next) {
 				return;
 			}
 		} else if (data.type == "image") {
-			data.thumbnail = '/images?url=' + encodeURIComponent(data.url);
+			data.thumbnail = '/images?url=' + encodeURIComponent(data.source || data.url);
 		}
 		res.send(data);
 	});
