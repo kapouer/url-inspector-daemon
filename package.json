@@ -1,6 +1,6 @@
 {
   "name": "url-inspector-daemon",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "url-inspector sample daemon",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
