@@ -13,7 +13,8 @@ var sharpie = require('sharpie')({
 	rs: "w:320,h:240,max",
 	bg: 'white',
 	crop: 'center',
-	flatten: true
+	flatten: true,
+	hostnames: true
 });
 
 app.enable('trust proxy');
