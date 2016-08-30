@@ -62,7 +62,7 @@ app.get('/fetch.js', (req, res) => res.sendFile(require.resolve('whatwg-fetch'))
 app.get('*', express.static(__dirname + '/../public'));
 
 var port = parseInt(process.env.PORT);
-if (isNaN(port)) port = undefined;
+if (isNaN(port)) port = null;
 
 var server = app.listen(port, function() {
 	console.log(`Please open
