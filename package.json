@@ -7,8 +7,15 @@
     "start": "bin/url-inspector-daemon.js",
     "install": "mkdir -p cache"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kapouer/url-inspector-daemon.git"
+  },
   "author": "Jérémy Lal <kapouer@melix.org>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapouer/url-inspector-daemon/issues"
+  },
   "dependencies": {
     "domt": "^5.2.6",
     "express": "^4.14.0",
