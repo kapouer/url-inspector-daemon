@@ -36,24 +36,25 @@ app.use('/cache', express.static(rootDir + '/cache'));
 app.get('/images', sharpie);
 
 app.get('/inspector', limiter, function(req, res, next) {
+	var prefix = '//' + req.get('Host');
 	inspector(req.query.url, function(err, data) {
 		if (err) return next(err);
 		var thumb = data.thumbnail;
 		if (thumb) {
 			if (thumb.startsWith('data:') == false) {
-				data.thumbnail = '/images?url=' + encodeURIComponent(thumb);
+				data.thumbnail = prefix + '/images?url=' + encodeURIComponent(thumb);
 			} else {
 				var buf = dataUri.decode(thumb);
 				var filePath = '/cache/' + hash(buf) + '.' + mime.extension(buf.mimetype);
 				fs.writeFile(rootDir + filePath, buf, function(err) {
 					if (err) console.error(err);
-					else data.thumbnail = '/images?url=' + encodeURIComponent(filePath);
+					else data.thumbnail = prefix + '/images?url=' + encodeURIComponent(filePath);
 					res.send(data);
 				});
 				return;
 			}
 		} else if (data.type == "image") {
-			data.thumbnail = '/images?url=' + encodeURIComponent(data.source || data.url);
+			data.thumbnail = prefix +  '/images?url=' + encodeURIComponent(data.source || data.url);
 		}
 		res.send(data);
 	});
