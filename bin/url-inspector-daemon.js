@@ -35,7 +35,7 @@ app.use('/cache', express.static(rootDir + '/cache'));
 
 app.get('/images', sharpie);
 
-app.get('/inspector', limiter, function(req, res, next) {
+app.get('/inspector', limiter, cors(), function(req, res, next) {
 	var prefix = '//' + req.get('Host');
 	inspector(req.query.url, function(err, data) {
 		if (err) return next(err);

@@ -17,6 +17,7 @@
     "url": "https://github.com/kapouer/url-inspector-daemon/issues"
   },
   "dependencies": {
+    "cors": "^2.8.1",
     "domt": "^5.2.6",
     "express": "^4.14.0",
     "express-rate-limit": "^2.4.0",
