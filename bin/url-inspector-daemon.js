@@ -8,6 +8,7 @@ var fs = require('fs');
 var mime = require('mime');
 var dataUri = require('strong-data-uri');
 var RateLimit = require('express-rate-limit');
+var cors = require('cors');
 
 var sharpie = require('sharpie')({
 	rs: "w:320,h:240,max",
